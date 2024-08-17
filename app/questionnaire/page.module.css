@@ -1,0 +1,208 @@
+
+.options{
+    counter-increment: my-question-counter;
+    margin: 44px 0px;
+}
+.options h3{
+    font-weight: 600;
+    margin-left: 42px;
+    line-height: 1.5;
+}
+.options:before{
+    content: counter(my-question-counter);
+    background-color: #B2142D26;
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-right: 22px;
+    font-size: 32px;
+    text-align: center;
+    font-weight: 500;
+}
+.option_grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,48%);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    margin: 44px 0px;
+}
+.radio_btn {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #F7F7F7;
+padding: 32px 32px 32px 64px;
+
+}
+.radio_btn input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: transparent;
+    border-radius: 50%;
+    margin: 33px 0px 0px 28px;
+    border: 1px solid #B2142D;
+}
+.radio_btn:hover {
+  background-color: #B2142D;
+  color: #ffffff;
+}
+.radio_btn:hover input ~ .checkmark {
+   	    border: 1px solid #ffffff
+}
+.radio_btn:has(input:checked){
+    background-color: #B2142D;
+    color: #ffffff;
+}
+
+.radio_btn input:checked ~ .checkmark {
+    border: 1px solid #ffffff;
+}
+
+/* checkbox */
+.check_box {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+   background-color: #F7F7F7;
+    padding: 32px 32px 32px 64px;
+}
+
+.check_box input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.boxCheckmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background: transparent;
+  margin: 33px 0px 0px 28px;
+    border: 1px solid #B2142D;
+}
+
+/* .check_box:hover input ~ .boxCheckmark {
+  background-color: #ccc;
+} */
+.check_box:hover {
+  background-color: #B2142D;
+  color: #ffffff;
+}
+.check_box:has(input:checked){
+    background-color: #B2142D;
+    color: #ffffff;
+}
+.check_box input:checked ~ .boxCheckmark {
+    border: 1px solid #ffffff;
+}
+.check_box input:checked ~ .boxCheckmark {
+  background-color: #B2142D;
+}
+.check_box:hover input ~ .boxCheckmark {
+   	    border: 1px solid #ffffff
+}
+.boxCheckmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.check_box input:checked ~ .boxCheckmark:after {
+  display: block;
+}
+
+.check_box .boxCheckmark:after {
+  left: 4px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+ /* .step1, .step2, .step3, .step4, .step5{
+  display: none;
+} */
+.stepper{
+  display : block;
+}
+.button{
+  background-color: #B2142D;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 16px 32px;
+  font-size: 18px;
+  display: inline-block;
+  margin: 22px 0px 12px 22px;
+  border: 1px solid #B2142D;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.button:hover{
+  background-color: #ffffff;
+  color: #B2142D;
+  border: 1px solid #B2142D;
+  transition: all 0.2s ease;
+}
+.form_grid{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+.fields_grid{
+  padding-right: 32px;
+  border-right: 1px solid #E6E6E6;
+}
+.cms_grid{
+  padding-left: 32px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 144px;
+  align-self: flex-start;
+}
+.cms_text{
+  font-weight: bold;
+  line-height: 1.7;
+  position: relative;
+}
+.cms_text::before{
+    content: '|';
+    font-weight: 500;
+    color: #B2142D;
+    position: absolute;
+    left: -12px;
+    font-size: 28px;
+    top: -8px;
+}
+.cms_grid p{
+  font-size: 16px;
+}
+.cms_img{
+  width: 120px;
+  margin: 12px 0px;
+}

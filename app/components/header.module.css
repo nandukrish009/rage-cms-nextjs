@@ -1,0 +1,15 @@
+.header{
+    background-color: #F6F7F7;
+    padding: 12px 0px;
+}
+.header_flex{
+    display: flex;
+    align-items: center;
+}
+.logo_image{
+    width: 72px;
+    height: 52px;
+    border-right: 1px solid #000000;
+    padding-right: 15px;
+    margin-right: 15px;
+}
