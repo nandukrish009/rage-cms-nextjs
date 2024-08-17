@@ -5,6 +5,7 @@ import getLocalData from '../../json/question.json'
 import NextPrev from '../components/nextprev';
 import { ChangeEvent, SetStateAction, useEffect, useState } from 'react';
 import Process from '../components/process';
+import Image from 'next/image';
 
 // async function getData() {
 //   const res = await fetch('https://main.d31a5g2ita1bq4.amplifyapp.com/api/questionnaire/651161f056dcb17f40325b81')
@@ -145,8 +146,8 @@ export default function Questionnaire() {
                     </label>
                     )
                     ):(
-                     question.options.map((option:any)=>
-                    <label className={styles.check_box} htmlFor={option.optionId}>{option.option}
+                     question.options.map((option:any, index:any)=>
+                    <label key={index} className={styles.check_box} htmlFor={option.optionId}>{option.option}
                     <input type="checkbox" id={option.optionId} name={question.questionId} value={option.optionId} checked={
                     checkArray.lastIndexOf(option.optionId) >= 0 ? true : false} onChange={(e)=> handleChange(e)}/>
                     <span className={styles.boxCheckmark}></span>
@@ -179,8 +180,8 @@ export default function Questionnaire() {
                     </label>
                     )
                     ):(
-                     question.options.map((option:any)=>
-                    <label className={styles.check_box} htmlFor={option.optionId}>{option.option}
+                     question.options.map((option:any, index:any)=>
+                    <label key={index} className={styles.check_box} htmlFor={option.optionId}>{option.option}
                     <input type="checkbox" id={option.optionId} name={question.questionId} value={option.optionId} checked={
                     checkArray.lastIndexOf(option.optionId) >= 0 ? true : false} onChange={(e)=> handleChange(e)}/>
                     <span className={styles.boxCheckmark}></span>
@@ -213,8 +214,8 @@ export default function Questionnaire() {
                     </label>
                     )
                     ):(
-                     question.options.map((option:any)=>
-                    <label className={styles.check_box} htmlFor={option.optionId}>{option.option}
+                     question.options.map((option:any, index:any)=>
+                    <label key={index} className={styles.check_box} htmlFor={option.optionId}>{option.option}
                     <input type="checkbox" id={option.optionId} name={question.questionId} value={option.optionId} checked={
                     checkArray.lastIndexOf(option.optionId) >= 0 ? true : false} onChange={(e)=> handleChange(e)}/>
                     <span className={styles.boxCheckmark}></span>
@@ -247,8 +248,8 @@ export default function Questionnaire() {
                     </label>
                     )
                     ):(
-                     question.options.map((option:any)=>
-                    <label className={styles.check_box} htmlFor={option.optionId}>{option.option}
+                     question.options.map((option:any, index:any)=>
+                    <label key={index} className={styles.check_box} htmlFor={option.optionId}>{option.option}
                     <input type="checkbox" id={option.optionId} name={question.questionId} value={option.optionId} checked={
                     checkArray.lastIndexOf(option.optionId) >= 0 ? true : false} onChange={(e)=> handleChange(e)}/>
                     <span className={styles.boxCheckmark}></span>
@@ -281,8 +282,8 @@ export default function Questionnaire() {
                     </label>
                     )
                     ):(
-                     question.options.map((option:any)=>
-                    <label className={styles.check_box} htmlFor={option.optionId}>{option.option}
+                     question.options.map((option:any, index:any)=>
+                    <label key={index} className={styles.check_box} htmlFor={option.optionId}>{option.option}
                     <input type="checkbox" id={option.optionId} name={question.questionId} value={option.optionId} checked={
                     checkArray.lastIndexOf(option.optionId) >= 0 ? true : false} onChange={(e)=> handleChange(e)}/>
                     <span className={styles.boxCheckmark}></span>
@@ -306,8 +307,8 @@ export default function Questionnaire() {
           <h3 className={styles.cms_text}>CMS’s that matches your requirement so far</h3>
           <p>Answer all the questions to see the CMS that would best match your requirements</p>
             {cmsImagesVlaue.map((image,index)=>
-            <div className={styles.cms_img}>
-              <img key={index} src={image.image} alt={image.CMS}/>
+            <div key={index} className={styles.cms_img}>
+              <Image key={index} src={image.image} alt={image.CMS}/>
               </div>
             )
             }
